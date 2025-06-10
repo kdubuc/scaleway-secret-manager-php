@@ -1,0 +1,48 @@
+{
+    "name": "kdubuc/scaleway-secret-manager",
+    
+    "description": "PHP client for Scaleway Secret Manager",
+
+    "keywords": ["scaleway", "php", "secrets", "manager", "secret manager", "vault"],
+
+    "license": "CECILL-2.1",
+    
+    "authors": [
+        {
+            "role": "Developer",
+            "name": "Kevin DUBUC",
+            "email": "kevindubuc62@gmail.com",
+            "homepage": "http://kevindubuc.fr"
+        }
+    ],
+
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+
+    "require-dev": {
+        "kdubuc/php-cs-fixer-rules": "^1.0",
+        "phpunit/phpunit": "^11.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Kdubuc\\ScwSecretManager\\": "src"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "Kdubuc\\ScwSecretManager\\Tests\\": "tests"
+        }
+    },
+
+    "scripts": {
+        "code:tests": "vendor/bin/phpunit",
+        "code:fix-cs": "vendor/bin/php-cs-fixer fix --config=vendor/kdubuc/php-cs-fixer-rules/php-cs-fixer.php"
+    },
+
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}

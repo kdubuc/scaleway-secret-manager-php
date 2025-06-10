@@ -1,0 +1,26 @@
+# Dependencies
+vendor
+
+# IDE
+.idea
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.cache
+
+# Environment variables
+**/.env
+**/.env.*
+!**/.env.example
+
+# PHPUnit
+phpunit.xml
+
+# Composer
+**/lib/**/composer.lock
+
+# Logs
+*.log
