@@ -18,12 +18,19 @@
 
     "require": {
         "php": "^8.2",
-        "guzzlehttp/guzzle": "^7.0"
+        "guzzlehttp/guzzle": "^7.0",
+        "composer/ca-bundle": "^1.5",
+        "pagerfanta/pagerfanta": "^4.7",
+        "symfony/serializer": "^7.3",
+        "symfony/property-info": "^7.3",
+        "symfony/property-access": "^7.3"
     },
 
     "require-dev": {
         "kdubuc/php-cs-fixer-rules": "^1.0",
-        "phpunit/phpunit": "^11.0"
+        "phpunit/phpunit": "^11.0",
+        "dg/bypass-finals": "^1.9",
+        "vimeo/psalm": "^6.12"
     },
 
     "autoload": {
@@ -40,7 +47,8 @@
 
     "scripts": {
         "code:tests": "vendor/bin/phpunit",
-        "code:fix-cs": "vendor/bin/php-cs-fixer fix --config=vendor/kdubuc/php-cs-fixer-rules/php-cs-fixer.php"
+        "code:fix-cs": "vendor/bin/php-cs-fixer fix --config=vendor/kdubuc/php-cs-fixer-rules/php-cs-fixer.php",
+        "code:analyze": "vendor/bin/psalm --no-cache"
     },
 
     "prefer-stable": true,
