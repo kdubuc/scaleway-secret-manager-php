@@ -4,19 +4,19 @@ namespace Kdubuc\ScwSecretManager\Tests\Object;
 
 use PHPUnit\Framework\TestCase;
 use Kdubuc\ScwSecretManager\Object\EphemeralPolicyAction;
-use Kdubuc\ScwSecretManager\Object\SecretEphemeralPolicy;
+use Kdubuc\ScwSecretManager\Object\VersionEphemeralProperty;
 
-final class SecretEphemeralPolicyTest extends TestCase
+final class VersionEphemeralPropertyTest extends TestCase
 {
     public function testConstructWithAllArguments() : void
     {
-        $ephemeralPolicy = new SecretEphemeralPolicy(
-            time_to_live: 3600,
+        $ephemeralPolicy = new VersionEphemeralProperty(
+            expires_at: '2023-10-01T00:00:00Z',
             expires_once_accessed: true,
             action: EphemeralPolicyAction::unknown_action,
         );
 
         $serialized = $ephemeralPolicy->jsonSerialize();
-        $this->assertEquals($ephemeralPolicy, SecretEphemeralPolicy::fromArray($serialized));
+        $this->assertEquals($ephemeralPolicy, VersionEphemeralProperty::fromArray($serialized));
     }
 }

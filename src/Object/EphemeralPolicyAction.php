@@ -2,7 +2,7 @@
 
 namespace Kdubuc\ScwSecretManager\Object;
 
-enum SecretVersionEphemeralPolicyAction : string
+enum EphemeralPolicyAction : string
 {
     /**
      * Default type.
