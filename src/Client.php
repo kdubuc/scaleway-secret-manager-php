@@ -234,7 +234,7 @@ final class Client
         string $secret_path,
         string $secret_name,
         string $project_id,
-    ) : Object\Version {
+    ) : Object\AccessSecretVersion {
         $response = $this->request('GET', "https://api.scaleway.com/secret-manager/v1beta1/regions/{$region}/secrets-by-path/versions/{$revision}/access", [
             'query' => [
                 'secret_path' => $secret_path,
@@ -243,7 +243,7 @@ final class Client
             ],
         ]);
 
-        return Object\Version::fromArray((array) json_decode($response->getBody()->getContents(), true));
+        return Object\AccessSecretVersion::fromArray((array) json_decode($response->getBody()->getContents(), true));
     }
 
     /**
@@ -354,7 +354,7 @@ final class Client
     /**
      * Access sensitive data in a secret's version specified by the region, secret_id and revision parameters.
      *
-     * https://www.scaleway.com/en/developers/api/secret-manager/#path-secret-versions-delete-a-version
+     * https://www.scaleway.com/en/developers/api/secret-manager/#path-secret-versions-access-a-secrets-version-using-the-secrets-id
      *
      * @param string $region    The region you want to target
      * @param string $secret_id ID of the secret. (UUID format)
@@ -364,10 +364,10 @@ final class Client
         string $region,
         string $secret_id,
         string $revision,
-    ) : Object\Version {
+    ) : Object\AccessSecretVersion {
         $response = $this->request('GET', "secret-manager/v1beta1/regions/{$region}/secrets/{$secret_id}/versions/{$revision}/access");
 
-        return Object\Version::fromArray((array) json_decode($response->getBody()->getContents(), true));
+        return Object\AccessSecretVersion::fromArray((array) json_decode($response->getBody()->getContents(), true));
     }
 
     /**
