@@ -14,8 +14,19 @@ composer require kdubuc/scaleway-secret-manager
 
 ```php
 require 'vendor/autoload.php';
+
 use Scaleway\SecretManager\Client;
-$client = new Client([]);
+
+$client = new Client('scwToken');
+
+try {
+    $secrets = $client->listSecrets('fr-par');
+    foreach ($secrets->autoPagingIterator() as $secret) {
+        echo $secret->id . PHP_EOL;
+    }
+} catch (Exception $e) {
+    echo 'Error: ' . $e->getMessage() . PHP_EOL;
+}
 ```
 
 ## Testing
