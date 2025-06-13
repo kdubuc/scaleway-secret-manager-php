@@ -13,7 +13,7 @@ final class AccessSecretVersionTest extends TestCase
         $access = new AccessSecretVersion(
             secret_id: 'sec-123',
             revision: 1,
-            data: 'c29tZS1zZWNyZXQtcGF5bG9hZA==', // base
+            data: 'c29tZS1zZWNyZXQtcGF5bG9hZA==',
             data_crc32: 123456789,
             type: SecretType::unknown_type
         );
