@@ -21,13 +21,11 @@ final class SecretVersionTest extends TestCase
             deleted_at: null,
             description: 'Version description',
             latest: true,
-            ephemeral_properties: [
-                new VersionEphemeralProperty(
-                    expires_at: '2024-01-10T00:00:00Z',
-                    expires_once_accessed: true,
-                    action: EphemeralPolicyAction::unknown_action,
-                ),
-            ],
+            ephemeral_properties: new VersionEphemeralProperty(
+                expires_at: '2024-01-10T00:00:00Z',
+                expires_once_accessed: true,
+                action: EphemeralPolicyAction::unknown_action,
+            ),
             deletion_requested_at: null,
         );
 
